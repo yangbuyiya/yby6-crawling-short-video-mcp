@@ -16,6 +16,12 @@
 - 支持Docker容器化部署
 - 代码结构清晰，易于扩展
 
+
+## 演示
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/8501c118-4ab2-471e-b4f6-683ac58902f0" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c649c0e0-309d-4cf7-9c6b-5581f9ae4383" />
+
+
 ## 支持平台
 
 目前支持以下短视频平台的解析：
@@ -40,6 +46,7 @@
 - 六间房（SixRoom）
 - 新片场（XinPianChang）
 - 好看视频（HaoKan）
+
 
 ## 目录结构
 
