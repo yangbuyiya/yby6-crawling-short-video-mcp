@@ -12,7 +12,7 @@
 - 支持20+种短视频平台（抖音、快手、小红书、微博、西瓜视频等）
 - 一键解析视频分享链接，获取无水印视频地址
 - 支持多种传输方式（stdio、SSE、HTTP）
-- 支持视频内容文本提取功能（需要FFmpeg和API Key、默认使用硅基流动：https://cloud.siliconflow.cn/i/tbvUltCF）
+- 支持视频内容文本提取功能（需要FFmpeg和API Key、默认使用硅基流动：https://cloud.siliconflow.cn/i/tbvUltCF ）
 - 支持Docker容器化部署
 - 代码结构清晰，易于扩展
 
