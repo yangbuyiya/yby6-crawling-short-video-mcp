@@ -12,7 +12,7 @@
 - 支持20+种短视频平台（抖音、快手、小红书、微博、西瓜视频等）
 - 一键解析视频分享链接，获取无水印视频地址
 - 支持多种传输方式（stdio、SSE、HTTP）
-- 支持视频内容文本提取功能（需要FFmpeg和API Key）
+- 支持视频内容文本提取功能（需要FFmpeg和API Key、默认使用硅基流动：https://cloud.siliconflow.cn/i/tbvUltCF）
 - 支持Docker容器化部署
 - 代码结构清晰，易于扩展
 
@@ -126,7 +126,7 @@ yby6_video_mcp_server --version
    
    **macOS/Linux:**
    ```bash
-   python3 -m venv venv
+   python -m venv venv
    source venv/bin/activate
    pip install -r requirements.txt
    ```
@@ -228,7 +228,7 @@ python -m yby6_video_mcp_server.server --transport http --host 0.0.0.0 --port 86
 
 #### 3. 视频内容文本提取
 
-**接口名称:** `extract_douyin_text`
+**接口名称:** `share_text_parse_tool`
 
 **请求参数:**
 
@@ -238,29 +238,8 @@ python -m yby6_video_mcp_server.server --transport http --host 0.0.0.0 --port 86
 | api_base_url | string | 否   | API基础URL，默认使用SiliconFlow           |
 | model        | string | 否   | 语音识别模型，默认使用SenseVoiceSmall     |
 
-**环境变量配置:**
-
-需要设置环境变量 `DOUYIN_API_KEY` 来提供API访问凭证:
-
-**Linux/macOS:**
-```bash
-export DOUYIN_API_KEY="your_api_key_here"
-```
-
-**Windows (CMD):**
-```cmd
-set DOUYIN_API_KEY=your_api_key_here
-```
-
-**Windows (PowerShell):**
-```powershell
-$env:DOUYIN_API_KEY="your_api_key_here"
-```
-
-**Docker:**
-```bash
-docker run -d -p 8637:8637 -e DOUYIN_API_KEY="your_api_key_here" yby6-video-mcp:latest
-```
+> 链接 sse、Streamable HTTP模式的时候只需要将 apikey 带入请求参数当中： http://127.0.0.1:8637/sse?apikey=xxxxxx
+> 使用的大模型是硅基流动前往获取apikey即可：https://cloud.siliconflow.cn/i/tbvUltCF
 
 **返回示例:**
 
@@ -310,9 +289,9 @@ bash script/deployBase.sh
 bash script/deployMcp.sh
 ```
 
-运行容器时，如需使用视频文本提取功能，请添加API密钥环境变量:
+运行容器
 ```bash
-docker run -d -p 8637:8637 -e DOUYIN_API_KEY="your_api_key_here" yby6-video-mcp:latest
+docker run -d -p 8637:8637 -e yby6-video-mcp:latest
 ```
 
 ## 贡献与反馈
