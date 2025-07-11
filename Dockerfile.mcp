@@ -1,0 +1,24 @@
+# 从自定义基础镜像继承（包含预安装的 FFmpeg、python:3.11-slim）
+FROM registry.cn-hangzhou.aliyuncs.com/yby6/ffmpeg-python-base:1.0.0
+
+# 设置工作目录
+WORKDIR /app
+
+# 1. 先只复制 requirements.txt 分步 COPY，利用 Docker 缓存
+COPY ./requirements.txt /app/
+
+# 2. 安装依赖（只要 requirements.txt 没变，这一步就会用缓存）
+RUN pip install --no-cache-dir -v -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 验证ffmpeg-python安装成功
+RUN python -c "import ffmpeg; print('ffmpeg-python installed successfully')"
+
+# 3. 只复制必要的代码文件
+COPY ./yby6_video_mcp_server /app/yby6_video_mcp_server/
+COPY ./pyproject.toml /app/
+
+# 暴露 MCP 服务的端口
+EXPOSE 8637
+
+# 启动 MCP 服务 外部传递参数 例如：--transport http --host 0.0.0.0 --port 8637
+CMD ["python", "-m", "yby6_video_mcp_server.server", "--transport", "sse", "--host", "0.0.0.0", "--port", "8637"]

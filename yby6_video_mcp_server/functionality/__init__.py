@@ -19,6 +19,7 @@ from .weishi import WeiShi
 from .xigua import XiGua
 from .xinpianchang import XinPianChang
 from .zuiyou import ZuiYou
+from .video_processor import VideoProcessor, HEADERS, DEFAULT_API_BASE_URL, DEFAULT_MODEL
 
 # 视频来源与解析器的映射关系
 video_source_info_mapping = {

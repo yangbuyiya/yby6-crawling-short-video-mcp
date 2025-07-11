@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yby6_video_mcp_server"
+version = "1.0.0"
+description = "全网短视频/图集去水印链接提取、视频文本内容提取MCP服务"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+  {name = "yangbuyiya", email = "yangbuyiya@duck.com"}
+]
+dependencies = [
+  "aiofiles>=23.2.1",
+  "annotated-types>=0.6.0",
+  "anyio>=4.5",
+  "certifi>=2024.2.2",
+  "click>=8.1.7",
+  "colorama>=0.4.6",
+  "cssselect>=1.2.0",
+  "exceptiongroup>=1.2.2",
+  "fake-useragent>=1.5.1",
+  "Faker>=24.4.0",
+  "fastapi>=0.110.1",
+  "ffmpeg-python>=0.2.0",
+  "h11>=0.14.0",
+  "httpcore>=1.0.5",
+  "httptools>=0.6.1",
+  "httpx>=0.28.1",
+  "idna>=3.6",
+  "Jinja2>=3.1.3",
+  "jmespath>=1.0.1",
+  "lxml>=5.2.1",
+  "markdown-it-py>=3.0.0",
+  "MarkupSafe>=2.1.5",
+  "mdurl>=0.1.2",
+  "parsel>=1.9.0",
+  "pydantic>=2.11.7",
+  "Pygments>=2.17.2",
+  "PyJWT>=2.8.0",
+  "python-dateutil>=2.9.0.post0",
+  "python-dotenv>=1.1.0",
+  "PyYAML>=6.0.1",
+  "rich>=13.9.4",
+  "shellingham>=1.5.4",
+  "six>=1.16.0",
+  "sniffio>=1.3.1",
+  "starlette>=0.37.2",
+  "typer>=0.15.2",
+  "uvicorn>=0.29.0",
+  "w3lib>=2.1.2",
+  "watchfiles>=0.21.0",
+  "websockets>=12.0",
+  "fastmcp>=2.10.2"
+]
+
+[project.scripts]
+yby6_video_mcp_server = "yby6_video_mcp_server.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["yby6_video_mcp_server"]
+
+[project.urls]
+"Homepage" = "https://github.com/yangbuyiya/yby6-crawl-videos-mcp-server"
+"Repository" = "https://github.com/yangbuyiya/yby6-crawl-videos-mcp-server"

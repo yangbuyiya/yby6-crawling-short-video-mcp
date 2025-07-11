@@ -1,0 +1,12 @@
+# Dockerfile.base
+FROM python:3.11-slim
+
+# 创建新的 sources.list 文件，使用阿里云镜像源
+RUN echo 'deb http://mirrors.aliyun.com/debian/ bookworm main contrib non-free non-free-firmware' > /etc/apt/sources.list && \
+    echo 'deb http://mirrors.aliyun.com/debian/ bookworm-updates main contrib non-free non-free-firmware' >> /etc/apt/sources.list && \
+    echo 'deb http://mirrors.aliyun.com/debian-security/ bookworm-security main contrib non-free non-free-firmware' >> /etc/apt/sources.list
+
+# 安装 FFmpeg（只在基础镜像中执行一次）
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends ffmpeg && \
+    rm -rf /var/lib/apt/lists/*
