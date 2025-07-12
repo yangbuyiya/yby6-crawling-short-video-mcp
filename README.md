@@ -332,9 +332,9 @@ bash script/deployBase.sh
 bash script/deployMcp.sh
 ```
 
-运行容器
+运行容器 拉取镜像 sse 模式
 ```bash
-docker run -d -p 8637:8637 -e yby6-video-mcp:latest
+docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.0
 ```
 
 ## 贡献与反馈
