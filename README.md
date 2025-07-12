@@ -147,7 +147,16 @@ yby6_video_mcp_server --version
 
 ### 方法三：使用 Docker 部署
 
-本项目提供了 Docker 支持，可以通过以下命令快速部署：
+本项目提供了 Docker 支持, 快速部署运行
+
+1. 运行容器 拉取镜像 sse 模式
+   
+   ```bash
+   docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.0
+   ```
+
+
+可以通过以下命令快速构建部署：
 
 1. 构建基础镜像（包含 FFmpeg 和 Python 环境）
 
