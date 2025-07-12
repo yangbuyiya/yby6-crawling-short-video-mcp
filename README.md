@@ -199,6 +199,9 @@ yby6_video_mcp_server --version
 
 ### SSE or HTTP MCP服务地址
 
+- 支持请求头配置apikey
+- 支持请求参数配置apikey
+
 ```json
 
 "yby6_video_mcp_server": {
