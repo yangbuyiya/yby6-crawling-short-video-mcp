@@ -1,4 +1,5 @@
 import re
+import os
 import time
 from typing import Optional
 from .functionality import (
@@ -127,10 +128,25 @@ async def share_text_parse_tool(
             # 不在 HTTP 请求上下文中，忽略错误
             print("非 HTTP 请求上下文，无法获取请求信息")
 
+
+        # 处理STDOIO模式环境变量
+        if not api_key:
+            api_key = os.getenv("API_KEY")
+            ctx.info(f"使用环境变量中的 API 密钥: {api_key}")
+            print(f"使用环境变量中的 API 密钥: {api_key}")
+        if not api_base_url:
+            api_base_url = os.getenv("API_BASE_URL")
+            ctx.info(f"使用环境变量中的 API 基础 URL: {api_base_url}")
+            print(f"使用环境变量中的 API 基础 URL: {api_base_url}")
+        if not model:
+            model = os.getenv("MODEL")
+            ctx.info(f"使用环境变量中的模型: {model}")
+            print(f"使用环境变量中的模型: {model}")
+
         # 如果没有就抛出异常
         if not api_key:
             raise ValueError(
-                "没有传递apikey，请通过参数传入apikey或请求头传入apikey，否则无法使用视频内容提取功能！"
+                "没有传递apikey，请通过参数传入apikey或请求头传入apikey，或者设置环境变量API_KEY，否则无法使用视频内容提取功能！"
             )
 
         processor = VideoProcessor(api_key, api_base_url, model)
@@ -212,7 +228,6 @@ def main():
     else:
         print("使用 STDIO 传输方式")
         mcp.run(transport="stdio")
-
 
 if __name__ == "__main__":
     main()

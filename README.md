@@ -102,7 +102,7 @@ brew install ffmpeg
 ffmpeg -version
 ```
 
-### 方法一：使用 pip 安装（推荐）
+### 方法一：pypi 使用 pip 安装 (可能版本落后,没有及时更新)
 
 ```bash
 # 安装最新版本
@@ -118,7 +118,7 @@ pip install yby6-video-mcp-server==1.0.0
 yby6_video_mcp_server --version
 ```
 
-### 方法二：从源码安装
+### 方法二：从源码安装 (推荐 最新版本)
 
 1. 克隆本项目
 
@@ -169,9 +169,45 @@ yby6_video_mcp_server --version
 
 ## 使用方法
 
-### 启动服务
+### stdio MCP启动服务
 
-在项目根目录下，使用如下命令启动服务：
+```json
+//  pypi 拉取运行 
+"yby6_video_mcp_server": {
+  "command": "uv",
+  "args": ["yby6_video_mcp_server"],
+  "env": {
+    "API_KEY": "sk-xcazqbgbnoagddpyaorhqhioxazvqdtednppksiqaotjsboe"
+  }
+},
+
+// 从源码运行
+"yby6_video_mcp_server": {
+  "command": "uv",
+  "args": [
+    "--directory",
+    "to/path/yby6-crawling-short-video-mcp/yby6_video_mcp_server",
+    "run",
+    "-m",
+    "yby6_video_mcp_server.server"
+  ],
+  "env": {
+    "API_KEY": "sk-xcazqbgbnoagddpyaorhqhioxazvqdtednppksiqaotjsboe"
+  }
+},
+```
+
+### SSE or HTTP MCP服务地址
+
+```json
+
+"yby6_video_mcp_server": {
+  "url": "http://127.0.0.1:8637/sse?apikey=xxxxxx",
+}
+
+```
+
+### 启动服务
 
 ```bash
 # 使用pip安装后

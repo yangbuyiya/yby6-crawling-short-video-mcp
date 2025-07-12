@@ -13,3 +13,5 @@ upload_pypi
 scripts/.local-config
 .local-config
 dist
+.idea
+uv.lock
