@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "yby6_video_mcp_server"
-version = "1.0.0"
+version = "1.0.1"
 description = "全网短视频/图集去水印链接提取、视频文本内容提取MCP服务"
 readme = "README.md"
 requires-python = ">=3.10"

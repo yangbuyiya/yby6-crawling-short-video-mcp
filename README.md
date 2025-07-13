@@ -103,13 +103,14 @@ ffmpeg -version
 ```
 
 ### 方法一：pypi 使用 pip 安装 (可能版本落后,没有及时更新)
+当前最新版本: [![PyPI version](https://img.shields.io/pypi/v/yby6-video-mcp-server.svg)](https://pypi.org/project/yby6-video-mcp-server/)
 
 ```bash
 # 安装最新版本
 pip install yby6-video-mcp-server
 
 # 或指定版本安装
-pip install yby6-video-mcp-server==1.0.0
+pip install yby6-video-mcp-server==1.0.1
 ```
 
 安装完成后，可以通过以下命令验证安装：
