@@ -107,16 +107,28 @@ ffmpeg -version
 
 ```bash
 # 安装最新版本
-pip install yby6-video-mcp-server
+pip install -i https://pypi.org/simple yby6-video-mcp-server
 
 # 或指定版本安装
-pip install yby6-video-mcp-server==1.0.1
+pip install -i https://pypi.org/simple yby6-video-mcp-server==1.0.1
 ```
 
 安装完成后，可以通过以下命令验证安装：
 
 ```bash
 yby6_video_mcp_server --version
+```
+
+## MCP 配置使用
+
+```json
+"yby6_video_mcp_server": {
+  "command": "uv",
+  "args": ["yby6_video_mcp_server"],
+  "env": {
+    "API_KEY": "前往获取免费apikey: https://cloud.siliconflow.cn/i/tbvUltCF"
+  }
+}
 ```
 
 ### 方法二：从源码安装 (推荐 最新版本)
