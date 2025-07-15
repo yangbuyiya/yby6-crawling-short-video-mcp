@@ -102,7 +102,7 @@ brew install ffmpeg
 ffmpeg -version
 ```
 
-### 方法一：pypi 使用 pip 安装 (可能版本落后,没有及时更新)
+### 方法一：pypi 使用 pip 安装 (推荐)
 当前最新版本: [![PyPI version](https://img.shields.io/pypi/v/yby6-video-mcp-server.svg)](https://pypi.org/project/yby6-video-mcp-server/)
 
 ```bash
@@ -131,7 +131,7 @@ yby6_video_mcp_server --version
 }
 ```
 
-### 方法二：从源码安装 (推荐 最新版本)
+### 方法二：从源码安装
 
 1. 克隆本项目
 
