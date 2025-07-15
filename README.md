@@ -110,7 +110,7 @@ ffmpeg -version
 pip install -i https://pypi.org/simple yby6-video-mcp-server
 
 # 或指定版本安装
-pip install -i https://pypi.org/simple yby6-video-mcp-server==1.0.1
+pip install -i https://pypi.org/simple yby6-video-mcp-server==1.0.2
 ```
 
 安装完成后，可以通过以下命令验证安装：
@@ -165,7 +165,7 @@ yby6_video_mcp_server --version
 1. 运行容器 拉取镜像 sse 模式
    
    ```bash
-   docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.0
+   docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.2
    ```
 
 
@@ -174,7 +174,7 @@ yby6_video_mcp_server --version
 1. 构建基础镜像（包含 FFmpeg 和 Python 环境）
 
    ```bash
-   docker build -t ffmpeg-python-base:1.0.0 -f Dockerfile.base .
+   docker build -t ffmpeg-python-base:1.0.2 -f Dockerfile.base .
    ```
 
 2. 构建 MCP 服务镜像
@@ -359,7 +359,7 @@ bash script/deployMcp.sh
 
 运行容器 拉取镜像 sse 模式
 ```bash
-docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.0
+docker run -d -p 8637:8637 registry.cn-hangzhou.aliyuncs.com/yby6/yby6_video_mcp_server:1.0.2
 ```
 
 ## 贡献与反馈

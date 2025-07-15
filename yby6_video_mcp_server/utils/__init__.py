@@ -1,22 +1,22 @@
 from urllib.parse import parse_qs, urlparse
 
+# 导入新创建的模块
+from .constants import URL_REGEX_PATTERN, DEFAULT_RESPONSE_CODES
+from .responses import create_success_response, create_error_response
+from .helpers import extract_url_from_text, get_val_from_url_by_query_key
+from .config import get_api_configuration
+from .tools import share_url_parse_tool, video_id_parse_tool, share_text_parse_tool
 
-def get_val_from_url_by_query_key(url: str, query_key: str) -> str:
-    """
-    从url的query参数中解析出query_key对应的值
-    :param url: url地址
-    :param query_key: query参数的key
-    :return:
-    """
-    url_res = urlparse(url)
-    url_query = parse_qs(url_res.query, keep_blank_values=True)
-
-    try:
-        query_val = url_query[query_key][0]
-    except KeyError:
-        raise KeyError(f"url中不存在query参数: {query_key}")
-
-    if len(query_val) == 0:
-        raise ValueError(f"url中query参数值长度为0: {query_key}")
-
-    return url_query[query_key][0]
+# 导出所有公共接口
+__all__ = [
+    'URL_REGEX_PATTERN',
+    'DEFAULT_RESPONSE_CODES',
+    'create_success_response',
+    'create_error_response',
+    'extract_url_from_text',
+    'get_api_configuration',
+    'share_url_parse_tool',
+    'video_id_parse_tool',
+    'share_text_parse_tool',
+    'get_val_from_url_by_query_key',
+]

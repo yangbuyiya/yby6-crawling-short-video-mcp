@@ -1,6 +1,6 @@
 import httpx
 
-from ..utils import get_val_from_url_by_query_key
+from ..utils.helpers import get_val_from_url_by_query_key
 
 from .base import BaseParser, VideoAuthor, VideoInfo
 

@@ -30,7 +30,7 @@ set https_proxy=http://127.0.0.1:7890
 
 :: Docker镜像相关配置
 set DOCKER_IMAGE_NAME=yby6/yby6_video_mcp_server
-set DOCKER_IMAGE_TAG=1.0.0
+set DOCKER_IMAGE_TAG=1.0.2
 set DOCKER_PLATFORM=linux/amd64
 set DOCKERFILE_PATH=Dockerfile.mcp
 
@@ -39,7 +39,7 @@ set DOCKERFILE_PATH=Dockerfile.mcp
 set ALIYUN_REGISTRY=registry.cn-hangzhou.aliyuncs.com
 set NAMESPACE=yby6
 set IMAGE_NAME=yby6_video_mcp_server
-set IMAGE_TAG=1.0.0
+set IMAGE_TAG=1.0.2
 
 :: Docker构建参数
 set BUILD_ARGS=--platform %DOCKER_PLATFORM% --load --progress plain
